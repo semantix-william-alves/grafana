@@ -1,0 +1,106 @@
+<query-editor-row query-ctrl="ctrl" can-collapse="true" has-text-edit="false">
+
+  <div class="gf-form-inline">
+
+    <div class="gf-form">
+      <label class="gf-form-label query-keyword">FROM</label>
+      <dalmatiner-metric-segment
+        segment="ctrl.target.collection"
+        css-class="tight-form-item-xxlarge"
+        get-options="ctrl.getCollections()"
+        on-change="ctrl.refresh()"
+        use-html-label="true"
+      />
+    </div>
+
+    <div class="gf-form">
+      <label class="gf-form-label query-keyword">WHERE</label>
+    </div>
+
+    <div class="gf-form" ng-repeat="segment in ctrl.target.tags">
+      <dalmatiner-metric-segment
+        segment="segment"
+        get-options="ctrl.getTagOptionsAt($index)"
+        on-change="ctrl.onTagSegmentChange($index)"
+        use-html-label="true"
+        style="position: relative;"
+      />
+      <a
+        ng-click="ctrl.removeWhereSegment($index)"
+        style="position: absolute; top: -1px; right: 4px; font-size: 11px;"
+        ng-if="$index === 0 || $index % 4 === 0"
+      >
+        <span class="pointer fa fa-remove" title="Remove condition"></span>
+      </a>
+    </div>
+
+    <div class="gf-form">
+      <dalmatiner-metric-segment
+        segment="ctrl.new_tag"
+        get-options="ctrl.getTagKeys()"
+        on-change="ctrl.addTag()"
+        use-html-label="$index === 0 || $index % 4 === 0"
+      />
+    </div>
+
+    <div class="gf-form gf-form--grow">
+      <div class="gf-form-label gf-form-label--grow"></div>
+    </div>
+
+  </div>
+
+  <div class="gf-form-inline">
+
+    <div class="gf-form">
+      <label class="gf-form-label query-keyword">SELECT</label>
+      <div ng-repeat="segment in ctrl.target.metric| to_trusted" role="meuitem">
+        <metric-segment
+          segment="segment"
+          get-options="ctrl.getMetricOptionsAt($index)"
+          on-change="ctrl.onMetricSegmentChange($index)"
+        />
+      </div>
+    </div>
+
+    <div class="gf-form">
+      <metric-segment
+        segment="ctrl.new_metric_part"
+        get-options="ctrl.getMetricOptionsAt(-1)"
+        on-change="ctrl.addMetricPart()"
+      />
+    </div>
+
+    <div class="gf-form" ng-if="ctrl.target.functions.length">
+      <div ng-repeat="func in ctrl.target.functions">
+        <span dalmatiner-func-editor class="gf-form-label query-part"></span>
+      </div>
+    </div>
+
+    <div class="gf-form">
+      <label class="dropdown"
+        dropdown-typeahead="ctrl.functionsSubMenu"
+        dropdown-typeahead-on-select="ctrl.addFunction($item, $subItem)"
+        title="Add new function">
+      </label>
+    </div>
+
+    <div class="gf-form gf-form--grow">
+      <div class="gf-form-label gf-form-label--grow"></div>
+    </div>
+
+  </div>
+
+  <div class="gf-form-inline">
+    <div class="gf-form max-width-30">
+      <label class="gf-form-label query-keyword">ALIAS</label>
+      <input type="text" class="gf-form-input" ng-model="ctrl.target.alias" spellcheck='false' placeholder="Naming pattern" ng-blur="ctrl.refresh()">
+    </div>
+
+    <div class="gf-form max-width-30">
+      <label class="gf-form-label query-keyword">SHIFT BY</label>
+      <input type="text" class="gf-form-input" ng-model="ctrl.target.timeshift" spellcheck='false' placeholder="Time interval" ng-blur="ctrl.refresh()">
+    </div>
+
+  </div>
+
+</query-editor-row>

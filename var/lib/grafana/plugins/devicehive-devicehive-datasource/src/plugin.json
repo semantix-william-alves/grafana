@@ -1,0 +1,35 @@
+{
+  "name": "DeviceHive",
+  "id": "devicehive-devicehive-datasource",
+  "type": "datasource",
+
+  "partials": {
+  },
+
+  "alerting": false,
+  "metrics": true,
+  "annotations": true,
+
+  "info": {
+    "description": "DeviceHive datasource",
+    "author": {
+      "name": "DeviceHive",
+      "url": "https://devicehive.com/"
+    },
+    "logos": {
+      "small": "img/deviceHive-logo-egg-only.svg",
+      "large": "img/deviceHive-logo-egg-only.svg"
+    },
+    "links": [
+      {"name": "GitHub", "url": "https://github.com/devicehive/devicehive-grafana-datasource"},
+      {"name": "Apache 2.0 License", "url": "https://github.com/devicehive/devicehive-grafana-datasource/blob/master/LICENSE"}
+    ],
+    "version": "2.0.1",
+    "updated": "2017-04-12"
+  },
+
+  "dependencies": {
+    "grafanaVersion": "4.6.1",
+    "plugins": [ ]
+  }
+}

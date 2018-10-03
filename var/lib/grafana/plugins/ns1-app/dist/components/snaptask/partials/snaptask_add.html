@@ -1,0 +1,49 @@
+<div class="page-header">
+  <h1>Add a New NS1 Task</h1>
+</div>
+<div class="row">
+  <div class="col-md-10">
+    <p>A task polls your NS1 Zone metrics and stores it in the Grafana.com time series hosted metrics store, making metrics available on any dashboard.</p>
+  </div>
+</div>
+
+<form name="addTaskForm" ng-show="ctrl.pageReady">
+  <div class="gf-form-group">
+    <div class="gf-form">
+      <label class="gf-form-label width-8">Zone</label>
+      <select type="text" class="gf-form-input max-width-20" ng-model="ctrl.newTask.zone" ng-options="item.zone as item.zone for item in ctrl.zones"/>
+      <button type="submit" class="btn btn-success" ng-click="ctrl.addTask()">Add</button>
+    </div>
+    <div class="gf-form" ng-if="ctrl.queuedTask.length > 0">
+      <table class="grafana-options-table form-inline">
+        <thead>
+          <tr>
+            <th>
+              New Zones to be monitored
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="t in ctrl.queuedTask">
+            <td>
+              {{t.zone}} <a class="btn btn-danger btn-mini" ng-click="ctrl.removeQueuedTaskItem(t)">
+                <i class="fa fa-remove"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+		<div class="gf-form-button-row">
+      <div ng-if="ctrl.creatingTasks">
+        <button disabled type="submit" class="btn btn-success"><i class="fa fa-spinner fa-spin"></i> Create</button>
+      </div>
+			<button ng-if="!ctrl.creatingTasks && ctrl.addingZones" type="submit" class="btn btn-success" ng-click="ctrl.create()">Create</button>
+      <button class="btn btn-inverse" ng-click="ctrl.cancel()">Cancel</button>
+		</div>
+  </div>
+</form>
+
+<div ng-show="ctrl.error">
+{{ctrl.error}}
+</div>

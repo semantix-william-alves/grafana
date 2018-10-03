@@ -1,0 +1,159 @@
+@import "ionicons";
+
+.dense-table-panel-table td {
+  padding: .25em 0 .25em 0.75em;
+}
+
+.dense-table-panel-table td p {
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+.alarm-details-table td p {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+.severity-icon {
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
+
+$cell-font-weight: 600;
+$indeterminate-color: #990000;
+$cleared-color: #EEE000;
+$normal-color: #86B15B;
+$warning-color: #FCCC3B;
+$minor-color: #EE901C;
+$major-color: #E3692F;
+$critical-color: #DB4345;
+
+.severity .indeterminate {
+  background-color: $indeterminate-color;
+  color: $cell-text-color;
+  font-weight: $cell-font-weight;
+}
+
+.severity .cleared {
+  background-color: $cleared-color;
+  color: $cell-text-color;
+  font-weight: $cell-font-weight;
+}
+
+.severity .normal {
+  background-color: $normal-color;
+  color: $cell-text-color;
+  font-weight: $cell-font-weight;
+}
+
+.severity .warning {
+  background-color: $warning-color;
+  color: $cell-text-color;
+  font-weight: $cell-font-weight;
+}
+
+.severity .minor {
+  background-color: $minor-color;
+  color: $cell-text-color;
+  font-weight: $cell-font-weight;
+}
+
+.severity .major {
+  background-color: $major-color;
+  color: $cell-text-color;
+  font-weight: $cell-font-weight;
+}
+
+.severity .critical {
+  background-color: $critical-color;
+  color: $cell-text-color;
+  font-weight: $cell-font-weight;
+}
+
+.alarm-table .selected {
+  background-color: $selected-cell-no-severity-background-color;
+}
+
+.alarm-table > .severity > .indeterminate {
+  background-color: lighten($indeterminate-color, 25%);
+}
+
+.alarm-table > .severity > .selected.cleared {
+  background-color: lighten($cleared-color, 25%);
+}
+
+.alarm-table >.severity > .selected.normal {
+  background-color: lighten($normal-color, 25%);
+}
+
+.alarm-table > .severity > .selected.warning {
+  background-color: lighten($warning-color, 25%);
+}
+
+.alarm-table > .severity > .selected.minor {
+  background-color: lighten($minor-color, 25%);
+}
+
+.alarm-table > .severity > .selected.major {
+  background-color: lighten($major-color, 25%);
+}
+
+.alarm-table > .severity > .selected.critical {
+  background-color: lighten($critical-color, 35%);
+}
+
+.alarm-table tr.next-selected, .alarm-table tr.next-selected td {
+  border-bottom: 2px dashed $selected-cell-border-color;
+}
+
+.alarm-table tr.selected, .alarm-table tr.selected td {
+  border: 2px dashed $selected-cell-border-color;
+  border-top: 2px dashed $selected-cell-border-color;
+  border-bottom: 2px dashed $selected-cell-border-color;
+}
+
+.alarm-table tr:hover {
+  background-color: $selected-cell-no-severity-background-color;
+}
+
+.alarm-table tr.indeterminate:hover {
+  background-color: lighten($indeterminate-color, 25%);
+}
+
+.alarm-table tr.cleared:hover {
+  background-color: lighten($cleared-color, 25%);
+}
+
+.alarm-table tr.normal:hover {
+  background-color: lighten($normal-color, 25%);
+}
+
+.alarm-table tr.warning:hover {
+  background-color: lighten($warning-color, 25%);
+}
+
+.alarm-table tr.minor:hover {
+  background-color: lighten($minor-color, 25%);
+}
+
+.alarm-table tr.major:hover {
+  background-color: lighten($major-color, 25%);
+}
+
+.alarm-table tr.critical:hover {
+  background-color: lighten($critical-color, 25%);
+}
+
+.gf-form-no-margin {
+  margin-bottom: .0rem !important;
+}
+
+.gf-smaller-form-label {
+  padding: .5rem .5rem !important;
+  font-size: .5rem !important;
+}
+
+.dropdown-menu-with-smaller-form-label {
+  font-size: .875rem !important;
+}
+

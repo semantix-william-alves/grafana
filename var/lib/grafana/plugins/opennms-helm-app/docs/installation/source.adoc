@@ -1,0 +1,28 @@
+= Installing from source
+
+== Building
+
+Download the source tree into a subfolder called `opennms-helm-app` in Grafana's plugin directory i.e.:
+
+[source, shell]
+----
+mkdir -p /var/lib/grafana/plugins
+cd /var/lib/grafana/plugins
+git clone https://github.com/OpenNMS/opennms-helm.git opennms-helm-app
+----
+
+Compile the application:
+
+[source, shell]
+----
+cd /var/lib/grafana/plugins/opennms-helm-app
+yarn
+yarn build
+----
+
+Restart Grafana:
+
+[source, shell]
+----
+systemctl restart grafana-server
+----

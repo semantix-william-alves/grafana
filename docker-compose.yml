@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+
+  monitor:
+    restart: always
+    image: grafana/grafana
+    env_file:
+      - plugins/.grafana-plugins.env
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - ./var/lib/grafana/plugins:/var/lib/grafana/plugins
+    ports:
+      - 3000:3000

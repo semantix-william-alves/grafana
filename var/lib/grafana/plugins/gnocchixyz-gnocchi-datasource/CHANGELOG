@@ -1,0 +1,73 @@
+Version 1.7.0
+
+* Only retrieve resource attributes needed by the graph
+* Allow to groupby "Dynamic Aggregates" and "Resource search"
+* Autocompletion for Query, Operations, Metric names and GroupbBy
+* Partial syntax highlighting for Query and Operations
+* New error reporting handling, label become red when field in invalid.
+
+Version 1.6.2
+
+* Use a dropdown for resource types
+
+Version 1.6.1
+
+* Allow to have different attributes for templating
+  (e.g: a dropdown with "$host - $flavor", while template service will use "id")
+
+Version 1.6.0
+
+* Add support fore Dynamic Aggregation
+* Remove support for Gnocchi transformation
+
+Version 1.5.5
+
+* Fix some release script issues
+
+Version 1.5.4
+
+* fix multivalue templating variable in template
+* fix typo in needed_overlap
+* Implements reaggregation
+
+Version 1.5.3
+
+* Rework error handling
+* Fix github url
+* templating: Fix multivalue handling
+
+Version 1.5.0
+
+* Behavior of missing datapoints is now configurable (shown as zero or not)
+* Add support for Gnocchi transformation
+* Custom aggregation method are allowed
+
+Version 1.4.0
+
+* Granularity can be set on all query Mode
+* $metric in label show the metric name
+* Label can be created dynamically with resource attribute prefixed by $ or surrounded by ${}
+  example: $host - $type - $metric
+* Resource aggregation can also aggregate metrics of the same resource
+  by using regex in metric name
+
+Version 1.3.1
+
+* Metric name use regex and not wildcard
+* Rework the UI
+
+Version 1.3.0
+
+* Metric name can be a wildcard for resource search queries
+* The option need_overlap can be set
+* Resource attribute used in label must be prefixed by "$" - breaking change
+
+Version 1.2.0
+
+* Gnocchi basic auth support
+* Allow to express Query in fancy format instead of JSON
+
+Version 1.1.0
+
+* Allow to select granularity
+* Provide example dashboard that works out of the box for Openstack Ceilometer

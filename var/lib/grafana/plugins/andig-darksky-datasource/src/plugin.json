@@ -1,0 +1,44 @@
+{
+  "name": "DarkSky",
+  "id": "andig-darksky-datasource",
+  "type": "datasource",
+
+  "metrics": true,
+  "annotations": false,
+
+  "partials": {
+    "config": "partials/config.html"
+  },
+  
+  "routes": [
+    {
+      "path": "darksky",
+      "method": "GET",
+      "url": "https://api.darksky.net/forecast"
+    }
+  ],
+
+  "info": {
+    "description": "DarkSky weather datasource",
+    "author": {
+      "name": "andig",
+      "url": "https://github.com/andig/grafana-darksky"
+    },
+    "keywords": ["weather","forecast","forecast.io","dark sky"],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {"name": "GitHub", "url": "https://github.com/andig/grafana-darksky"},
+      {"name": "MIT License", "url": "https://github.com/andig/grafana-darksky/blob/master/LICENSE"}
+    ],
+    "version": "1.0.0",
+    "updated": "2018-06-20"
+  },
+
+  "dependencies": {
+    "grafanaVersion": "3.x.x",
+    "plugins": [ ]
+  }
+}

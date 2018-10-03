@@ -1,0 +1,43 @@
+<section class="grafana-metric-options" >
+  <div class="gf-form-group">
+    <div class="gf-form-inline">
+      <span class="gf-form-label width-10">
+  			<a ng-click="ctrl.panelCtrl.toggleEditorHelp(1);" bs-tooltip="'click to show helpful info'" data-placement="bottom">
+  				<i class="fa fa-info-circle"></i>
+  				&nbsp;Window
+  			</a>
+  		</span>
+      <span class="gf-form-label width-10">
+  			<a ng-click="ctrl.panelCtrl.toggleEditorHelp(2);" bs-tooltip="'click to show helpful info'" data-placement="bottom">
+  				<i class="fa fa-info-circle"></i>
+  				&nbsp;Correlations
+  			</a>
+  		</span>
+      <span class="gf-form-label width-10">
+  			<a ng-click="ctrl.panelCtrl.toggleEditorHelp(3);" bs-tooltip="'click to show helpful info'" data-placement="bottom">
+  				<i class="fa fa-info-circle"></i>
+  				&nbsp;Documentation
+  			</a>
+  		</span>
+    </div>
+  </div>
+  <div class="editor-row">
+  	<div class="grafana-info-box span6" ng-if="ctrl.panelCtrl.editorHelpIndex === 1">
+  		<h5>Window</h5>
+      <ul>
+        <li>Window is a essentially a Group By Time Window</li>
+        <li>Windows are applicable to aggregate functions only e.g. mean, first etc.</li>
+      </ul>
+  	</div>
+    <div class="grafana-info-box span6" ng-if="ctrl.panelCtrl.editorHelpIndex === 2">
+  		<h5>Correlations</h5>
+      <ul>
+        <li>EXPERIMENTAL FEATURE</li>
+        <li>Uses Pearson Product-Moment Correlation Coefficient to find similar series</li>
+      </ul>
+  	</div>
+    <div class="grafana-info-box span6" ng-if="ctrl.panelCtrl.editorHelpIndex === 3">
+      <a href="http://sidewinder.srotya.com/docs/" target="_blank">Sidewinder Documentation Link</a>
+  	</div>
+  </div>
+</section>

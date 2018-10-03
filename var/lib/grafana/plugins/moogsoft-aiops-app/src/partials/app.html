@@ -1,0 +1,41 @@
+
+<div>
+  <h3 class="page-heading">
+  	Moogsoft AIOps Configuration
+	</h3>
+    Enter the URL and Graze API credentials of your Moogsoft AIOps instance.
+
+  <br />
+  <br />
+
+  <div class="gf-form-group">
+    <div class="gf-form">
+      <span class="gf-form-label width-7">URL</span>
+      <input class="gf-form-input max-width-21" type="text" ng-model='ctrl.dsConfig.url' min-length="0" ng-pattern="/^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/" required></input>
+    </div>
+
+    <div class="gf-form">
+      <span class="gf-form-label width-7">User</span>
+      <input class="gf-form-input max-width-21" type="text"  ng-model='ctrl.dsConfig.basicAuthUser' placeholder="user" required></input>
+    </div>
+
+    <div class="gf-form">
+      <span class="gf-form-label width-7">Password</span>
+      <input class="gf-form-input max-width-21" type="password" ng-model='ctrl.dsConfig.basicAuthPassword' placeholder="password" required></input>
+    </div>
+
+  </div>
+
+  <div ng-if="ctrl.testRes" class="gf-form-group section">
+    <div class="alert-{{ctrl.testRes.status}} alert">
+      <div class="alert-icon">
+        <i class="fa fa-exclamation-triangle" ng-show="ctrl.testRes.status === 'error'"></i>
+        <i class="fa fa-check" ng-show="ctrl.testRes.status !== 'error'"></i>
+      </div>
+      <div class="alert-body">
+        <div class="alert-title">{{ctrl.testRes.message}}</div>
+      </div>
+    </div>
+  </div>
+
+</div>

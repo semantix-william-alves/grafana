@@ -1,0 +1,781 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "revision": 4,
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "hideControls": true,
+  "links": [],
+  "refresh": false,
+  "rows": [
+    {
+      "collapse": false,
+      "height": "50",
+      "panels": [
+        {
+          "content": "<div style=\"display: flex; justify-content: space-between;\">\n<img src=\"https://grafanadev.moogsoft.io/theme/resources/images/AIOps-logo-horiz.e0662c1e.svg\" width=150>\n<div style=\"font-family: Roboto;\nfont-size: 13px;\nfont-weight: 400;\ntext-align: center;\nheight: 32px;\npadding: 8px 10px 5px 10px;\nmin-width: 70px;\nmargin-left: 5px;\nborder-radius: 3px;\nbackground-color: #203c46;\ncolor: #00baff;\ndisplay: flex; cursor: pointer;\">Go to Moogsoft AIOps<i class=\"fa fa-external-link-square\" style=\"margin-left: 5px; margin-top: 2px;\" aria-hidden=\"true\"></i>\n</div>\n</div>",
+          "height": "50px",
+          "id": 9,
+          "links": [],
+          "mode": "html",
+          "span": 12,
+          "title": "",
+          "transparent": true,
+          "type": "text"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 247,
+      "panels": [
+        {
+          "aliasColors": {
+            "Critical": "#890f02",
+            "Major": "#e0752d"
+          },
+          "bars": true,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "Moogsoft",
+          "fill": 1,
+          "id": 2,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": false,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 9,
+          "stack": true,
+          "steppedLine": false,
+          "targets": [
+            {
+              "endpoint": "getSeveritySituationStats",
+              "filters": {
+                "severity": "4,5"
+              },
+              "filtersText": {
+                "severity": "Major,Critical"
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Significant Situations",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "#299c46",
+            "rgba(237, 129, 40, 0.89)",
+            "#d44a3a"
+          ],
+          "datasource": "Moogsoft",
+          "format": "none",
+          "gauge": {
+            "maxValue": 10,
+            "minValue": 0,
+            "show": true,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 1,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 3,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "endpoint": "getTeamSituationStats",
+              "filters": {
+                "teams": "$Team"
+              },
+              "filtersText": {
+                "teams": "$Team"
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "5,8",
+          "title": "Open Situations",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "aliasColors": {
+            "Opened": "#64b0c8",
+            "Unassigned": "#cffaff"
+          },
+          "bars": true,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "Moogsoft",
+          "fill": 1,
+          "id": 3,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": false,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": true,
+          "steppedLine": false,
+          "targets": [
+            {
+              "endpoint": "getStatusSituationStats",
+              "filters": {
+                "status": "1,2"
+              },
+              "filtersText": {
+                "status": "Opened,Unassigned"
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Unassigned Situations",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {
+            "Reassigned Situations": "#0a50a1"
+          },
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "Moogsoft",
+          "fill": 1,
+          "id": 5,
+          "legend": {
+            "avg": false,
+            "current": true,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 3,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "endpoint": "getReassignedSituationStats",
+              "filters": {},
+              "filtersText": {},
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Reassigned Situations (No team)",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {
+            "Unacknowledged": "#447ebc"
+          },
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "Moogsoft",
+          "fill": 1,
+          "height": "",
+          "id": 4,
+          "legend": {
+            "avg": false,
+            "current": true,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 3,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "endpoint": "getStatusSituationStats",
+              "filters": {
+                "status": "5",
+                "teams": "$Team"
+              },
+              "filtersText": {
+                "status": "Unacknowledged",
+                "teams": "$Team"
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Unacknowledged Situations",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Current for $Team",
+      "titleSize": "h4"
+    }
+  ],
+  "schemaVersion": 14,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "text": "Cloud DevOps",
+          "value": "1"
+        },
+        "datasource": "Moogsoft",
+        "hide": 0,
+        "includeAll": true,
+        "label": null,
+        "multi": true,
+        "name": "Team",
+        "options": [
+          {
+            "selected": false,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": true,
+            "text": "Cloud DevOps",
+            "value": "1"
+          },
+          {
+            "selected": false,
+            "text": "Team_2",
+            "value": "2"
+          },
+          {
+            "selected": false,
+            "text": "Team_3",
+            "value": "3"
+          },
+          {
+            "selected": false,
+            "text": "Team_4",
+            "value": "4"
+          },
+          {
+            "selected": false,
+            "text": "Team_5",
+            "value": "5"
+          },
+          {
+            "selected": false,
+            "text": "Team_6",
+            "value": "6"
+          },
+          {
+            "selected": false,
+            "text": "Team_7",
+            "value": "7"
+          },
+          {
+            "selected": false,
+            "text": "Team_8",
+            "value": "8"
+          },
+          {
+            "selected": false,
+            "text": "Team_9",
+            "value": "9"
+          },
+          {
+            "selected": false,
+            "text": "Team_10",
+            "value": "10"
+          },
+          {
+            "selected": false,
+            "text": "Team_11",
+            "value": "11"
+          },
+          {
+            "selected": false,
+            "text": "Team_12",
+            "value": "12"
+          },
+          {
+            "selected": false,
+            "text": "Team_13",
+            "value": "13"
+          },
+          {
+            "selected": false,
+            "text": "Team_14",
+            "value": "14"
+          },
+          {
+            "selected": false,
+            "text": "Team_15",
+            "value": "15"
+          },
+          {
+            "selected": false,
+            "text": "Team_16",
+            "value": "16"
+          },
+          {
+            "selected": false,
+            "text": "Team_17",
+            "value": "17"
+          },
+          {
+            "selected": false,
+            "text": "Team_18",
+            "value": "18"
+          },
+          {
+            "selected": false,
+            "text": "Team_19",
+            "value": "19"
+          },
+          {
+            "selected": false,
+            "text": "Team_20",
+            "value": "20"
+          },
+          {
+            "selected": false,
+            "text": "Team_21",
+            "value": "21"
+          },
+          {
+            "selected": false,
+            "text": "Team_22",
+            "value": "22"
+          },
+          {
+            "selected": false,
+            "text": "Team_23",
+            "value": "23"
+          },
+          {
+            "selected": false,
+            "text": "Team_24",
+            "value": "24"
+          },
+          {
+            "selected": false,
+            "text": "Team_25",
+            "value": "25"
+          },
+          {
+            "selected": false,
+            "text": "Team_26",
+            "value": "26"
+          },
+          {
+            "selected": false,
+            "text": "Team_27",
+            "value": "27"
+          },
+          {
+            "selected": false,
+            "text": "Team_28",
+            "value": "28"
+          },
+          {
+            "selected": false,
+            "text": "Team_29",
+            "value": "29"
+          },
+          {
+            "selected": false,
+            "text": "Team_30",
+            "value": "30"
+          },
+          {
+            "selected": false,
+            "text": "Team_31",
+            "value": "31"
+          },
+          {
+            "selected": false,
+            "text": "Team_32",
+            "value": "32"
+          },
+          {
+            "selected": false,
+            "text": "Team_33",
+            "value": "33"
+          },
+          {
+            "selected": false,
+            "text": "Team_34",
+            "value": "34"
+          },
+          {
+            "selected": false,
+            "text": "Team_35",
+            "value": "35"
+          },
+          {
+            "selected": false,
+            "text": "Team_36",
+            "value": "36"
+          },
+          {
+            "selected": false,
+            "text": "Team_37",
+            "value": "37"
+          },
+          {
+            "selected": false,
+            "text": "Team_38",
+            "value": "38"
+          },
+          {
+            "selected": false,
+            "text": "Team_39",
+            "value": "39"
+          },
+          {
+            "selected": false,
+            "text": "Team_40",
+            "value": "40"
+          },
+          {
+            "selected": false,
+            "text": "Team_41",
+            "value": "41"
+          },
+          {
+            "selected": false,
+            "text": "Team_42",
+            "value": "42"
+          },
+          {
+            "selected": false,
+            "text": "Team_43",
+            "value": "43"
+          },
+          {
+            "selected": false,
+            "text": "Team_44",
+            "value": "44"
+          },
+          {
+            "selected": false,
+            "text": "Team_45",
+            "value": "45"
+          },
+          {
+            "selected": false,
+            "text": "Team_46",
+            "value": "46"
+          },
+          {
+            "selected": false,
+            "text": "Team_47",
+            "value": "47"
+          },
+          {
+            "selected": false,
+            "text": "Team_48",
+            "value": "48"
+          },
+          {
+            "selected": false,
+            "text": "Team_49",
+            "value": "49"
+          },
+          {
+            "selected": false,
+            "text": "Team_50",
+            "value": "50"
+          }
+        ],
+        "query": "getTeams",
+        "refresh": 0,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "2017-12-22T05:52:44.939Z",
+    "to": "2018-01-30T22:21:36.552Z"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "",
+  "title": "AIOps Home",
+  "version": 27
+}

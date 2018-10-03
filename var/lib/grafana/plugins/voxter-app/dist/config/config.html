@@ -1,0 +1,24 @@
+<h3 class="page-heading">Voxter Credentials</h3>
+
+<div class="gf-form-group">
+	<div class="gf-form">
+		<label class="gf-form-label width-10">Grafana.Net</label>
+		<!-- Hidden input to stop chrome from autofilling -->
+		<input style="display:none;" type="password" name="gnet_token"/>
+		<input type="password" class="gf-form-input max-width-20" ng-model="ctrl.appModel.secureJsonData.gnet_token" placeholder="Grafana.net api token" ng-show="!ctrl.appModel.jsonData.gnetTokenSet" />
+		<input type="text" class="gf-form-input max-width-20" disabled="disabled" value="saved" ng-show="ctrl.appModel.jsonData.gnetTokenSet" />
+		<a href="#" ng-click="ctrl.appModel.jsonData.gnetTokenSet=false" ng-if="ctrl.appModel.jsonData.gnetTokenSet">reset</a>
+	</div>
+	<div class="gf-form">
+		<label class="gf-form-label width-10">Voxter Api Key</label>
+		<!-- Hidden input to stop chrome from autofilling -->
+		<input style="display:none;" type="password" name="voxter_token" />
+		<input type="password" class="gf-form-input max-width-20" ng-model="ctrl.voxterToken" placeholder="Voxter api token" ng-show="!ctrl.appModel.jsonData.voxterTokenSet" />
+		<input type="text" class="gf-form-input max-width-20" disabled="disabled" value="saved" ng-show="ctrl.appModel.jsonData.voxterTokenSet" />
+		<a href="#" ng-click="ctrl.voxterToken='' && ctrl.appModel.jsonData.voxterTokenSet=false" ng-if="ctrl.appModel.jsonData.voxterTokenSet">reset</a>
+	</div>
+
+	<div ng-show="ctrl.error">
+		{{ctrl.error}}
+	</div>
+</div>

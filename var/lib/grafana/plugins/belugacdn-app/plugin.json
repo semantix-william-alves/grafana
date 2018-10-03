@@ -1,0 +1,40 @@
+{
+  "type": "app",
+  "name": "BelugaCDN",
+  "id": "belugacdn-app",
+
+  "css": {
+    "dark":  "css/dark.css",
+    "light":  "css/light.css"
+  },
+
+  "info": {
+    "description": "BelugaCDN metrics for Grafana",
+    "author": {
+      "name": "BelugaCDN",
+      "url": "https://www.belugacdn.com"
+    },
+    "keywords": ["belugacdn app"],
+    "logos": {
+      "small": "img/small_logo.png",
+      "large": "img/large_logo.png"
+    },
+    "links": [
+      {"name": "Beluga CDN", "url": "https://www.belugacdn.com"},
+      {"name": "GitHub", "url": "https://github.com/belugacdn/grafana-belugacdn-app"},
+      {"name": "License & Terms", "url": "https://github.com/belugacdn/grafana-belugacdn-app/blob/master/LICENSE"}
+    ],
+    "version": "1.2.0",
+    "updated": "2016-12-09"
+  },
+
+  "includes": [
+    {"type": "dashboard", "name": "BelugaCDN Metrics", "path": "dashboards/belugacdn_app_dashboard.json"},
+    {"type": "datasource", "name": "BelugaCDN API"}
+  ],
+
+  "dependencies": {
+    "grafanaVersion": "3.x.x",
+    "plugins": []
+  }
+}

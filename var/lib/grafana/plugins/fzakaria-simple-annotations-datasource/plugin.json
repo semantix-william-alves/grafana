@@ -1,0 +1,30 @@
+{
+  "id": "fzakaria-simple-annotations-datasource",
+  "name": "Simple Annotations",
+  "type": "datasource",
+
+  "metrics": false,
+  "annotations": true,
+
+  "info": {
+    "description": "Simple Annotations for Grafana saved in your dashboard.json",
+    "author": {
+      "name": "Farid Zakaria",
+      "url": "farid.m.zakaria@gmail.com"
+    },
+    "keywords": ["simple", "annotations"],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {"name": "Github", "url": "https://github.com/fzakaria/simple-annotations-plugin"}
+    ],
+    "version": "1.0.0"
+  },
+
+  "dependencies": {
+    "grafanaVersion": "4.x.x",
+    "plugins": [ ]
+  }
+}

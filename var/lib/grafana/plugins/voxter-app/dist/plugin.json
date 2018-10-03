@@ -1,0 +1,83 @@
+{
+  "type": "app",
+  "name": "Voxter VoIP Platform Metrics",
+  "id": "voxter-app",
+
+  "staticRoot": ".",
+
+  "routes": [
+    {
+      "path": "tasks",
+      "method": "*",
+      "url": "https://task-server.raintank.io/api/v1/tasks",
+      "reqSignedIn": true,
+      "headers": [
+        {"name": "Authorization", "content": "Bearer {{.SecureJsonData.gnet_token}}"}
+      ]
+    },
+    {
+      "path": "tasks/*",
+      "method": "DELETE",
+      "url": "https://task-server.raintank.io/api/v1/tasks",
+      "reqSignedIn": true,
+      "headers": [
+        {"name": "Authorization", "content": "Bearer {{.SecureJsonData.gnet_token}}"}
+      ]
+    },
+    {
+      "path": "graphite/*",
+      "method": "*",
+      "url": "https://tsdb.raintank.io/graphite",
+      "reqSignedIn": true,
+      "reqRole": "Viewer",
+      "headers": [
+        { "name": "Authorization", "content": "Bearer {{.SecureJsonData.gnet_token}}"}
+      ]
+    },
+    {
+      "path": "elasticsearch/*",
+      "method": "*",
+      "url": "https://tsdb.raintank.io/elasticsearch",
+      "reqSignedIn": true,
+      "reqRole": "Viewer",
+      "headers": [
+        { "name": "Authorization", "content": "Bearer {{.SecureJsonData.gnet_token}}"}
+      ]
+    }
+  ],
+
+  "info": {
+    "description": "Voxter for Grafana allows for the collection and graphing of Voxter data over time.",
+    "author": {
+      "name": "Voxter",
+      "url": "https://voxter.com"
+    },
+    "keywords": ["voxter", "voip"],
+    "logos": {
+      "small": "img/voxter_logo_small.png",
+      "large": "img/voxter_logo.png"
+    },
+    "links": [
+      {"name": "Project site", "url": "http://github.com/raintank/voxter-app"},
+      {"name": "License & Terms", "url": "https://github.com/raintank/voxter-app/blob/master/LICENSE"}
+    ],
+    "screenshots": [
+      {"name": "Dashboard", "path": "img/voxter-dashboard.png"}
+    ],
+    "version": "0.0.1",
+    "updated": "2016-06-29"
+  },
+
+  "includes": [
+    {
+      "type": "dashboard",
+      "name": "Voxter Account Statistics",
+      "path": "dashboards/voxter-account-statistics.json",
+      "addToNav": true
+    }
+  ],
+
+  "dependencies": {
+    "grafanaVersion": "3.x.x"
+  }
+}

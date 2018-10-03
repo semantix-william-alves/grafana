@@ -1,0 +1,43 @@
+<query-editor-row query-ctrl="ctrl" can-collapse="false">
+  <div class="gf-form-inline">
+    <div class="gf-form">
+      <label class="gf-form-label query-keyword">Statistic</label>
+      <div class="gf-form-select-wrapper">
+        <select class="gf-form-input" ng-model="ctrl.target.endpoint" ng-options="f.value as f.text for f in ctrl.endpointOptions" ng-change="ctrl.endpointChanged(true)"></select>
+      </div>
+    </div>
+    <div class="gf-form">
+    </div>
+    <div class="gf-form" ng-repeat="filter in ctrl.filters">
+      <label class="gf-form-label">
+        <span class="query-keyword">{{filter.key}}</span>
+        <span>&nbsp;=&nbsp;[{{ctrl.target.filtersText[filter.key]}}]</span>
+      </label>
+      <label class="gf-form-label pointer" ng-if="ctrl.target.filters[filter.key]" ng-click="ctrl.clearFilters()">
+        <i class="fa fa-remove"></i> clear</span>
+      </label>
+      <gf-form-dropdown model="filter.selected"
+                        allow-custom="true"
+                        lookup-text="false"
+                        get-options="ctrl.getFilterOptions(filter)"
+                        on-change="ctrl.addFilter(filter)"
+                        css-class="min-width-12">
+      </gf-form-dropdown>
+    </div>
+    <div class="gf-form" ng-repeat="option in ctrl.stringOptions">
+			<label class="gf-form-label">
+        <span class="query-keyword">{{option.key}}</span>
+      </label>
+			<div class="gf-form-select-wrapper">
+				<select class="gf-form-input"
+						ng-model="ctrl.target.stringOptions[option.key]"
+						ng-options="op.value as op.display_value for op in option.options"
+						ng-change="ctrl.refresh()">
+				</select>
+			</div>
+    </div>
+    <div class="gf-form gf-form--grow">
+      <div class="gf-form-label gf-form-label--grow"></div>
+    </div>
+  </div>
+</query-editor-row>

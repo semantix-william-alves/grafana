@@ -1,0 +1,65 @@
+{
+  "type": "app",
+  "name": "Moogsoft AIOps",
+  "id": "moogsoft-aiops-app",
+
+  "info": {
+    "description": "Moogsoft AIOps App",
+    "author": {
+      "name": "Moogsoft",
+      "url": "https://moogsoft.com"
+    },
+    "logos": {
+      "small": "img/moogsoft-symbol.svg",
+      "large": "img/moogsoft-symbol.svg"
+    },
+    "keywords": ["Moogsoft"],
+    "links": [{
+        "name": "Moogsoft",
+        "url": "https://moogsoft.com"
+    }],
+    "screenshots": [],
+    "version": "7.0.0",
+    "updated": "2018-10-04"
+  },
+
+  "dependencies": {
+    "grafanaVersion": "5.2.4",
+    "plugins": []
+  },
+
+  "includes": [
+    {
+      "type": "dashboard",
+      "name": "Ops Insights",
+      "path": "dashboards/ops-overview.json",
+      "addToNav": true,
+      "defaultNav": true
+    },
+    {
+      "type": "dashboard",
+      "name": "Noise Reduction",
+      "path": "dashboards/noise-reduction.json",
+      "addToNav": true,
+      "defaultNav": false
+    },
+    {
+      "type": "dashboard",
+      "name": "Team Ops Insights",
+      "path": "dashboards/team-ops.json",
+      "addToNav": true,
+      "defaultNav": false
+    },
+    {
+      "type": "dashboard",
+      "name": "Team Performance",
+      "path": "dashboards/team-performance.json",
+      "addToNav": true,
+      "defaultNav": false
+    },
+    {
+      "type": "datasource",
+      "name": "Moogsoft AIOps data source"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+<query-editor-row query-ctrl="ctrl"
+	class="sidewinder-datasource-query-row" has-text-edit-mode="true">
+<div class="gf-form" ng-if="ctrl.target.rawQuery">
+	<textarea class="gf-form-input" placeholder="Sidewinder TSQL" rows="1"
+		ng-model="ctrl.target.raw" spellcheck="false" ng-model-onblur
+		ng-change="ctrl.onChangeInternal()" />
+</div>
+<div ng-if="!ctrl.target.rawQuery">
+	<div class="gf-form-inline gf-form--grow">
+		<div class="gf-form">
+			<label class="gf-form-label query-keyword width-9">MEASUREMENT</label>
+			<metric-segment-model property="ctrl.target.target"
+				select-mode="true" get-options="ctrl.getMeasurementOptions()"
+				on-change="ctrl.onChangeInternal()"
+				css-class="tight-form-item-xxlarge width-8"></metric-segment-model>
+		</div>
+		<label class="gf-form-label query-keyword width-7">WHERE</label>
+		<div class="gf-form-inline" ng-repeat="segment in ctrl.target.filters">
+			<div class="gf-form" ng-if="!segment.type">
+				<metric-segment-model property="segment.key" select-mode="true"
+					get-options="ctrl.getTagOptions()"
+					on-change="ctrl.onChangeFilter($index, segment)"
+					css-class="tight-form-item-xxlarge"></metric-segment-model>
+				<metric-segment-model property="segment.operator" select-mode="true"
+					get-options="ctrl.getOperatorOptions()"
+					on-change="ctrl.onChangeFilter($index, segment)"
+					css-class="query-keyword width-2 tight-form-item-xxlarge"></metric-segment-model>
+				<metric-segment-model property="segment.value" select-mode="true"
+					get-options="ctrl.getTagValueOptions(segment.key)"
+					on-change="ctrl.onChangeFilter($index, segment)"
+					css-class="tight-form-item-xxlarge"></metric-segment-model>
+				<label class="gf-form-label gf-form--grow query-keyword width-3">
+					<a ng-click="ctrl.removeFilter($index, segment)"><i
+						class="fa fa-close"></i></a>
+				</label>
+			</div>
+			<div class="gf-form" ng-if="segment.type">
+				<metric-segment-model property="segment.value" select-mode="true"
+					get-options="ctrl.getConditionOptions()"
+					on-change="ctrl.onChangeFilter($index, segment)"
+					css-class="query-keyword width-5 tight-form-item-xxlarge"></metric-segment-model>
+			</div>
+		</div>
+		<label class="gf-form-label gf-form--grow query-keyword width-3">
+			<a ng-click="ctrl.addFilter()"><i class="fa fa-plus"></i></a>
+		</label>
+	</div>
+	<div class="gf-form-inline gf-form--grow">
+		<div class="gf-form">
+			<label class="gf-form-label query-keyword width-9">SELECT</label>
+			<metric-segment-model property="ctrl.target.field" select-mode="true"
+				get-options="ctrl.getFieldOptions()"
+				on-change="ctrl.onChangeInternal()"
+				css-class="tight-form-item-xxlarge width-8"></metric-segment-model>
+		</div>
+		<div class="gf-form">
+			<label class="gf-form-label query-keyword width-7">AGGREGATE</label>
+			<metric-segment-model property="ctrl.target.aggregator.name"
+				select-mode="true" get-options="ctrl.getAggregators()"
+				on-change="ctrl.addArgs()" css-class="tight-form-item-xxlarge"></metric-segment-model>
+		</div>
+		<div class="gf-form">
+			<label class="gf-form-label query-keyword width-6">WINDOW</label> <input
+				type="text"
+				class="gf-form-input ng-pristine ng-valid ng-empty ng-touched width-6"
+				ng-model="ctrl.target.aggregator.args[0].value" spellcheck="false"
+				placeholder="Time Window" ng-blur="ctrl.refresh()">
+		</div>
+		<div class="gf-form">
+			<metric-segment-model property="ctrl.target.aggregator.unit"
+				select-mode="true" get-options="ctrl.getUnits()"
+				on-change="ctrl.onChangeInternal()"
+				css-class="tight-form-item-xxlarge query-keyword"></metric-segment-model>
+		</div>
+	</div>
+	<div class="gf-form gf-form--grow">
+		<label class="gf-form-label query-keyword width-9">CORRELATIONS</label>
+		<editor-checkbox text="Auto-correlate" model="ctrl.target.correlate"></editor-checkbox>
+	</div>
+</div>
+</query-editor-row>

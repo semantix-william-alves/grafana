@@ -1,0 +1,42 @@
+{
+  "name": "OpenNMS Helm",
+  "id": "opennms-helm-app",
+  "type": "app",
+  "info": {
+    "description": "Create flexible dashboards using data from OpenNMS® Horizon™ and/or OpenNMS® Meridian™.",
+    "author": {
+      "name": "The OpenNMS Group Inc.",
+      "url": "https://www.opennms.com"
+    },
+    "keywords": ["opennms", "helm", "fault management", "performance management", "monitoring", "snmp"],
+    "logos": {
+      "small": "img/helm.svg",
+      "large": "img/helm.svg"
+    },
+    "links": [
+      {"name": "Project site", "url": "https://github.com/OpenNMS/opennms-helm"},
+      {"name": "License & Terms", "url": "https://github.com/OpenNMS/opennms-helm/blob/master/LICENSE"}
+    ],
+    "screenshots": [
+      {"name": "Alarms", "path": "img/Helm_Screenshot_Alarms.png"},
+      {"name": "Environemnt Sensors", "path": "img/Helm_Screenshot_Environmental.png"},
+      {"name": "Fault Data Source", "path": "img/Helm_Screenshot_Faults_Data_Source.png"},
+      {"name": "Metrics", "path": "img/Helm_Screenshot_Metrics.png"},
+      {"name": "Performance Data Source", "path": "img/Helm_Screenshot_Performance_Data_Source.png"}
+    ],
+    "version": "2.0.0",
+    "updated": "2018-07-03"
+  },
+  "includes": [
+    {"type": "panel", "name": "Alarm Table"},
+    {"type": "panel", "name": "Alarm Histogram"},
+    {"type": "datasource", "name": "OpenNMS Faults"},
+    {"type": "datasource", "name": "OpenNMS Performance"},
+    {"type": "datasource", "name": "OpenNMS Flows"},
+    {"type": "dashboard", "name": "Flow Deep Dive | OpenNMS Helm", "path": "dashboards/flow_deep_dive.json"}
+  ],
+  "dependencies": {
+    "grafanaVersion": "5.x.x",
+    "plugins": []
+  }
+}

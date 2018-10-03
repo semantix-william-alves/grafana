@@ -1,0 +1,61 @@
+{
+  "name": "gnocchixyz-gnocchi-datasource",
+  "private": true,
+  "version": "1.7.0",
+  "description": "Grafana datasource for Gnocchi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gnocchixyz/grafana-gnocchi-datasource"
+  },
+  "author": "Mehdi Abaakouk",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "http://www.apache.org/licenses/LICENSE-2.0"
+  },
+  "devDependencies": {
+    "@types/angular": "^1.6.27",
+    "@types/angular-mocks": "^1.5.10",
+    "@types/expect.js": "^0.3.29",
+    "@types/lodash": "^4.14.70",
+    "@types/mocha": "^2.2.41",
+    "@types/q": "^1.0.2",
+    "angular-mocks": "^1.6.5",
+    "browserify": "^14.4.0",
+    "es6-promise": "^4.1.1",
+    "es6-shim": "^0.35.3",
+    "expect": "^1.20.2",
+    "expect.js": "^0.3.1",
+    "grunt": "^1.0.1",
+    "grunt-angular-templates": "^1.1.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^3.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-karma": "^2.0.0",
+    "grunt-mocha-test": "^0.13.2",
+    "grunt-systemjs-builder": "^1.0.0",
+    "grunt-ts": "^6.0.0-beta.16",
+    "grunt-tslint": "^5.0.1",
+    "jshint-stylish": "^2.2.1",
+    "karma": "^1.7.0",
+    "karma-browserify": "^5.1.1",
+    "karma-expect": "^1.1.3",
+    "karma-mocha": "^1.3.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "load-grunt-tasks": "^3.5.2",
+    "mocha": "^3.4.2",
+    "phantomjs-prebuilt": "^2.1.14",
+    "q": "^1.5.0",
+    "systemjs": "^0.20.15",
+    "tslint": "^5.5.0",
+    "typescript": "^2.4.2",
+    "watchify": "^3"
+  },
+  "dependencies": {
+    "angular": "^1.6.5",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1"
+  },
+  "homepage": "https://github.com/gnocchixyz/grafana-gnocchi-datasource"
+}

@@ -1,0 +1,33 @@
+{
+  "type": "app",
+  "name": "Snap",
+  "id": "raintank-snap-app",
+
+  "info": {
+    "description": "Snap Data Source and API UI",
+    "author": {
+      "name": "Raintank Inc.",
+      "url": "http://raintank.io"
+    },
+    "keywords": ["snap"],
+    "version": "0.0.5",
+    "updated": "2017-01-16",
+    "logos": {
+      "small": "src/img/snap-small.png",
+      "large": "src/img/snap-large.png"
+    },
+    "links": [
+      {"name": "GitHub", "url": "https://github.com/raintank/snap-app"},
+      {"name": "Snap", "url": "https://github.com/intelsdi-x/snap"},
+      {"name": "License", "url": "https://github.com/raintank/snap-app/blob/master/LICENSE"}
+    ]
+  },
+
+  "includes": [
+    {"type": "datasource", "name": "Snap DS"}
+  ],
+
+  "dependencies": {
+    "grafanaVersion": "3.1.1 - 4.0.0"
+  }
+}
